@@ -1,0 +1,14 @@
+- content = params.content
+
+|
+  <!DOCTYPE html>
+
+html lang="it"
+  head= partial "partials/head"
+  body
+    = partial "partials/site-nav"
+    = partial "partials/overlay-nav"
+
+    main= content
+
+    = partial "partials/site-footer"

@@ -1,0 +1,75 @@
+.site-footer
+  background-color: $blue-d-color
+  color: $white-color
+  +vertical-padding(5)
+
+.site-footer__main
+  text-align: center
+
+.site-footer__logo
+  +margin-bottom(2)
+  img
+    height: 50px
+
+.site-footer__menu
+  +margin-bottom(2)
+
+.site-footer__fl
+
+.site-footer__fl__item
+  +margin-bottom(1)
+
+.site-footer__fl__link
+  display: block
+  +padding(1)
+  +font-size(tau)
+  font-weight: bold
+  color: $white-color
+
+.site-footer__contacts
+  +margin-bottom(2)
+
+.site-footer__other
+  text-align: center
+
+.site-footer__title
+  +font-size(smallprint)
+  font-weight: bold
+  +margin-bottom(1)
+
+.site-footer__text
+  +font-size(milli)
+  +margin-bottom(2)
+  a
+    +inline-block
+    color: $white-color
+    font-weight: bold
+    text-decoration: underline
+    +margin-right(0.5)
+    +margin-left(0.5)
+
+    &:hover
+      color: $aqua-color
+
++at-breakpoint(desk)
+  .site-footer__main
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+
+  .site-footer__logo img
+    height: 70px
+
+  .site-footer__menu
+    flex-grow: 2
+    +margin-left(3)
+
+  .site-footer__fl
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: flex-start
+
+  .site-footer__fl__item
+    +margin-left(3)

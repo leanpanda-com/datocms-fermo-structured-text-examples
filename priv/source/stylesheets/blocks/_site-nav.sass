@@ -1,0 +1,90 @@
+.site-nav
+  position: sticky
+  top: 0
+  background: $aqua-color
+  z-index: 999
+
+.site-nav__content
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  +vertical-padding(1)
+
+.site-nav__logo
+  background-image: image-url("logo.svg")
+  background-repeat: no-repeat
+  display: block
+  height: 32px
+  width: 450px
+  transition: none
+
+.site-nav__menu
+  display: flex
+  align-items: center
+  justify-content: flex-end
+
+.site-nav__toggler
+  display: block
+  height: 40px
+  width: 40px
+  border: none
+  background-image: image-url("icons/hamburger.svg")
+  background-repeat: no-repeat
+  background-position: center
+  background-color: transparent
+  -webkit-appearance: none
+  border: none
+  cursor: pointer
+
+.site-nav__fl
+  display: none
+
+.site-nav__fl__item
+
+.site-nav__fl__link
+
+.site-nav__right
+  display: none
+
++at-breakpoint(desk)
+  .site-nav__fl,
+  .site-nav__right
+    display: block
+
+  .site-nav__toggler
+    display: none
+
+  .site-nav__logo
+    background-image: image-url("logo.svg")
+    height: 40px
+    width: 410px
+
+  .site-nav__menu
+    flex-grow: 2
+    justify-content: flex-start
+    +margin-left(6)
+
+  .site-nav__fl
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: flex-start
+
+  .site-nav__fl__item
+    +margin-right(4)
+
+  .site-nav__fl__link
+    display: block
+    font-weight: bold
+    +font-size(tau)
+    color: $blue-color
+    border-bottom: 2px solid transparent
+
+    &:hover
+      text-decoration: none
+      color: $black-color
+
+    &.is-active
+      +heading-font-family
+      border-color: $aqua-color

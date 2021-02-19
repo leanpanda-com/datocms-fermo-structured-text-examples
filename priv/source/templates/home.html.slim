@@ -1,0 +1,10 @@
+- articles = params.articles
+
+div
+  section.padding--both-3
+    .wrap
+      .icon-boxes
+        = Enum.map articles, fn article ->
+          = link_to article.title,
+            "/articles/#{article.slug}",
+            class: "icon-boxes__link"

@@ -1,0 +1,30 @@
+.quote
+  color: $blue-color
+  position: relative
+  z-index: 0
+  +padding-top(3)
+  &:before
+    content: ""
+    height: 100%
+    width: 100%
+    +position(absolute, 0 null null -24px)
+    background-image: image-url("icons/big-quote.svg")
+    background-repeat: no-repeat
+    z-index: -1
+
+.quote__content
+  +heading-font-family
+  +font-size(epsilon)
+  +margin-bottom(1)
+
+.quote__author
+  +font-size(smallprint)
+  font-weight: bold
+
++at-breakpoint(desk)
+  .quote__content
+    +font-size(gamma)
+    +margin-bottom(2)
+
+  .quote__author
+    +font-size(epsilon)

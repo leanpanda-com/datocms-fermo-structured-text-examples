@@ -1,0 +1,49 @@
+elixir:
+  result = query!("""
+    query MyQuery {
+      article(filter: {id: {eq: \"#{params.id}\"}}) {
+      id
+      title
+      body {
+        value
+          links {
+            ... on ItemRecord {
+              __typename
+              id
+              slug
+              title
+              body
+            }
+            ... on ArticleRecord {
+              __typename
+              id
+              slug
+              title
+              body {
+                value
+              }
+            }
+          }
+          blocks {
+            ... on MyarticleblockRecord {
+              __typename
+              id
+              articleBlockTitle
+              image {
+                id
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  """)
+  article = result[:article]
+  body = structured_text_to_html(article.body)
+
+section.article
+  .wrap--small
+    header.article--center.margin--bottom-3
+      h2.article__title = article.title
+      .article__text = body

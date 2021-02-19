@@ -1,0 +1,18 @@
+elixir:
+  result = query!("""
+    query MyQuery {
+      item(filter: {id: {eq: \"#{params.id}\"}}) {
+        id
+        slug
+        title
+        body
+      }
+    }
+  """)
+  item = result[:item]
+
+section.item
+  .wrap--small
+    header.item--center.margin--bottom-3
+      h2.article__title = item.title
+      .article__text = item.body

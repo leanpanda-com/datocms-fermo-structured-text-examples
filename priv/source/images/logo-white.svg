@@ -1,0 +1,7 @@
+<svg viewBox="0 0 220 30" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo { font: 24px sans-serif; fill: white; }
+  </style>
+
+  <text x="0" y="25" class="logo">Structured Text</text>
+</svg>

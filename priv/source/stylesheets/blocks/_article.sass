@@ -1,0 +1,50 @@
+.article
+  position: relative
+  background: $white-color
+  +margin-top(2)
+
+.article__title
+  +heading-font-family
+  +font-size(alpha)
+  +margin-bottom(2)
+
+.article__text
+  +font-size(tau)
+
+.article--center
+  @extend .article
+  text-align: center
+
+  .article__title,
+  .article__text,
+  .article__actions,
+  .article__footer
+    margin-right: auto
+    margin-left: auto
+
+  .article__title
+    max-width: 800px
+
+  .article__text,
+  .article__actions,
+  .article__footer
+    max-width: 650px
+
+.article--center-left-on-desk
+  @extend .article--center
+
++at-breakpoint(desk)
+  .article__title
+    +font-size(beta)
+
+  .article__text
+    +font-size(epsilon)
+
+  .article--center-left-on-desk
+    text-align: left
+
+    .article__title,
+    .article__text,
+    .article__actions,
+    .article__footer
+      max-width: none

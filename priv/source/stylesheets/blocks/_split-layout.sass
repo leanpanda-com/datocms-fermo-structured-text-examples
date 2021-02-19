@@ -1,0 +1,29 @@
+.split-layout
+
+.split-layout__aside
+  border-bottom: 1px solid $blue-color
+  +padding-bottom(3)
+
+.split-layout__main
+  +vertical-padding(3)
+
++at-breakpoint(desk)
+  .split-layout
+    display: flex
+    align-items: stretch
+
+  .split-layout__aside
+    border-bottom: none
+    border-right: 1px solid $blue-color
+    min-width: 400px
+    +padding-right(8)
+
+  .split-layout__aside__content
+    position: sticky
+    top: 80px
+    +padding-top(2)
+
+  .split-layout__main
+    flex-grow: 2
+    +padding-left(6)
+    +padding-bottom(6)

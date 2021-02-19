@@ -1,0 +1,43 @@
+.icon
+  width: 16px
+  height: 16px
+  mask-repeat: no-repeat
+  mask-position: center
+  mask-size: contain
+  background: currentcolor
+  display: block
+
+@each $icon, $value in $background-icons
+  [data-icon=#{$icon}]
+    mask-image: image-url($value)
+
+// Icon Sizes
+@if $enable-icon-size
+  .icon--small
+    @extend .icon
+    width: 12px
+    height: 12px
+
+  @if $enable-icon-colored
+    @each $color, $value in $all-colors
+      .icon--small-#{$color}
+        @extend .icon--small
+        color: $value
+
+  .icon--big
+    @extend .icon
+    width: 30px
+    height: 30px
+
+  @if $enable-icon-colored
+    @each $color, $value in $all-colors
+      .icon--big-#{$color}
+        @extend .icon--big
+        color: $value
+
+// Icon colored
+@if $enable-icon-colored
+  @each $color, $value in $all-colors
+    .icon--#{$color}
+      @extend .icon
+      color: $value

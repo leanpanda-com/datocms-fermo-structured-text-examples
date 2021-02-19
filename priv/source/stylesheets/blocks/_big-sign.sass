@@ -1,0 +1,66 @@
+.big-sign
+  position: relative
+
+.big-sign__title
+  +heading-font-family
+  +font-size(gamma)
+  +margin-bottom(2)
+
+.big-sign__text
+  +font-size(tau)
+
+.big-sign__actions
+  +margin-top(3)
+
+.big-sign__footer
+  +margin-top(2)
+  +font-size(smallprint)
+  font-weight: bold
+
+.big-sign--blue
+  color: $blue-color
+
+.big-sign--rev
+  color: $white-color
+
+  .big-sign__footer a
+    color: $aqua-color
+    text-decoration: underline
+
+.big-sign--center
+  @extend .big-sign
+  text-align: center
+
+  .big-sign__title,
+  .big-sign__text,
+  .big-sign__actions,
+  .big-sign__footer
+    margin-right: auto
+    margin-left: auto
+
+  .big-sign__title
+    max-width: 800px
+
+  .big-sign__text,
+  .big-sign__actions,
+  .big-sign__footer
+    max-width: 650px
+
+.big-sign--center-left-on-desk
+  @extend .big-sign--center
+
++at-breakpoint(desk)
+  .big-sign__title
+    +font-size(beta)
+
+  .big-sign__text
+    +font-size(epsilon)
+
+  .big-sign--center-left-on-desk
+    text-align: left
+
+    .big-sign__title,
+    .big-sign__text,
+    .big-sign__actions,
+    .big-sign__footer
+      max-width: none

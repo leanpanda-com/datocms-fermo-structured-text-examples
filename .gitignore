@@ -1,0 +1,7 @@
+/build/
+/_build/
+/deps/
+/.netlify/
+
+# Local Netlify folder
+.netlify

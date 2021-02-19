@@ -1,0 +1,38 @@
+@mixin grid
+  list-style: none
+  margin-left: -$grid-gutter
+  margin-right: 0
+  padding-left: 0
+  padding-right: 0
+  // set font size to fix the whitespace bug in firefox https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+  font-size: 0
+
+@mixin grid-item
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  display: inline-block
+  padding-left: $grid-gutter
+  vertical-align: top
+  width: 100%
+  // use mixin to set correct font size as defined in _base.sass
+  +default-responsive-font
+
+@mixin grid-width-setup($namespace: "")
+  .#{$namespace}fill
+    width: 100%
+
+  @each $total in $grid-cols
+    @for $size from 1 to $total
+      .#{$namespace}#{$size}-#{$total}
+        width: round-decimals($size / $total * 100%)
+
+@mixin grid-shift-setup($rule, $namespace: "")
+  .#{$namespace}0
+    #{$rule}: 0
+
+  @each $total in $grid-cols
+    @for $size from 1 to $total
+      .#{$namespace}#{$size}-#{$total}
+        position: relative
+        #{$rule}: round-decimals($size / $total * 100%)

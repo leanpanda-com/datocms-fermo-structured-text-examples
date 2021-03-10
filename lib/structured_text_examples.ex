@@ -27,9 +27,7 @@ defmodule StructuredTextExamples do
       config,
       "/templates/home.html.slim",
       "/index.html",
-      %{
-        articles: articles
-      }
+      %{articles: articles}
     )
 
     config = Enum.reduce(
@@ -40,9 +38,7 @@ defmodule StructuredTextExamples do
           config,
           "/templates/article.html.slim",
           "/articles/#{article.slug}/index.html",
-          %{
-            id: article.id
-          }
+          %{id: article.id}
         )
       end
     )
@@ -55,9 +51,7 @@ defmodule StructuredTextExamples do
           config,
           "/templates/item.html.slim",
           "/items/#{item.slug}/index.html",
-          %{
-            id: item.id
-          }
+          %{id: item.id}
         )
       end
     )

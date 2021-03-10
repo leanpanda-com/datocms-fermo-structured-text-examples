@@ -1,7 +1,7 @@
 elixir:
   result = query!("""
-    query MyQuery {
-      article(filter: {id: {eq: \"#{params.id}\"}}) {
+    query MyQuery($id: ItemId!) {
+      article(filter: {id: {eq: $id}}) {
       id
       title
       body {
@@ -38,7 +38,8 @@ elixir:
         }
       }
     }
-  """)
+  """, %{id: params.id})
+
   article = result[:article]
   body = structured_text_to_html(article.body)
 

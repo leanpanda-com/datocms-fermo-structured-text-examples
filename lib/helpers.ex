@@ -3,7 +3,7 @@ defmodule Helpers do
     quote do
       import DatoCMS.GraphQLClient.MetaTagHelpers
       import FermoHelpers.Links
-      import Fermo.DatoCMS.GraphQLClient, only: [query!: 1]
+      import Fermo.DatoCMS.GraphQLClient, only: [query!: 1, query!: 2]
 
       def articles do
         result = query!(

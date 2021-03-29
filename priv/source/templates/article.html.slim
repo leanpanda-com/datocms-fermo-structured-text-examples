@@ -1,21 +1,19 @@
 elixir:
   result = query!("""
-    query MyQuery($id: ItemId!) {
+    query ArticleQuery($id: ItemId!) {
       article(filter: {id: {eq: $id}}) {
-      id
-      title
-      body {
-        value
+        id
+        title
+        body {
+          value
           links {
+            __typename
             ... on ItemRecord {
-              __typename
               id
               slug
               title
-              body
             }
             ... on ArticleRecord {
-              __typename
               id
               slug
               title
@@ -25,8 +23,8 @@ elixir:
             }
           }
           blocks {
+            __typename
             ... on MyarticleblockRecord {
-              __typename
               id
               articleBlockTitle
               image {

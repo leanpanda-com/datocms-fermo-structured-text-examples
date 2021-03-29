@@ -20,9 +20,9 @@ defmodule StructuredTextExamples.MixProject do
 
   defp deps do
     [
-      {:datocms_graphql_client, git: "https://github.com/leanpanda-com/elixir_datocms_graphql_client", override: true},
-      {:fermo, "~> 0.13.3", git: "https://github.com/leanpanda-com/fermo", override: true},
-      {:fermo_datocms_graphql_client, "~> 0.13.3", git: "https://github.com/leanpanda-com/fermo_datocms_graphql_client", override: true}
+      {:datocms_graphql_client, "~> 0.14.0"},
+      {:fermo, "~> 0.13.3"},
+      {:fermo_datocms_graphql_client, "~> 0.13.4"}
     ]
   end
 end
